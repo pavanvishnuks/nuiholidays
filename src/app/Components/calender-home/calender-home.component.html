@@ -1,20 +1,3 @@
-<link
-  href="https://cdn.syncfusion.com/ej2/ej2-base/styles/material.css"
-  rel="stylesheet"
-/>
-<link
-  href="https://cdn.syncfusion.com/ej2/ej2-buttons/styles/material.css"
-  rel="stylesheet"
-/>
-<link
-  href="https://cdn.syncfusion.com/ej2/ej2-popups/styles/material.css"
-  rel="stylesheet"
-/>
-<link
-  href="https://cdn.syncfusion.com/ej2/ej2-calendars/styles/material.css"
-  rel="stylesheet"
-/>
-
 <div class="header">
   <a href="#default" class="logo">Nous calender Events</a>
   <div class="header-right">
@@ -68,15 +51,17 @@
       <td id="row1">
         <img src="{{ holiday.img }}" id="festimg" />
 
-        <mat-card *ngFor="let Employee of holiday.employees">
+        <mat-card *ngFor="let upcomingEvents of holiday.Uevents">
           <table>
             <tr>
-              <td><p>Nousian's Birthday</p></td>
               <td>
-                <p id="empname">{{ Employee.empname }}</p>
+                <p>{{ upcomingEvents.edate }}</p>
               </td>
               <td>
-                <img src="{{ Employee.empimg }}" id="empimg" />
+                <p id="ename">{{ upcomingEvents.ename }}</p>
+              </td>
+              <td>
+                <img src="{{ upcomingEvents.eimg }}" id="empimg" />
               </td>
             </tr>
           </table>

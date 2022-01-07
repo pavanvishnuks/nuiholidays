@@ -146,6 +146,11 @@ h4 {
   width: 300px;
 }
 
-app-year-calendar {
+.Ycal {
   margin-left: 30px;
+  margin-top: -830px;
+}
+.moreinfo {
+  margin-top: 20px;
+  position: absolute;
 }
