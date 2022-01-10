@@ -1,3 +1,20 @@
+<link
+  href="https://cdn.syncfusion.com/ej2/ej2-base/styles/material.css"
+  rel="stylesheet"
+/>
+<link
+  href="https://cdn.syncfusion.com/ej2/ej2-buttons/styles/material.css"
+  rel="stylesheet"
+/>
+<link
+  href="https://cdn.syncfusion.com/ej2/ej2-popups/styles/material.css"
+  rel="stylesheet"
+/>
+<link
+  href="https://cdn.syncfusion.com/ej2/ej2-calendars/styles/material.css"
+  rel="stylesheet"
+/>
+
 <div class="header">
   <a href="#default" class="logo">Nous calender Events</a>
   <div class="header-right">
@@ -10,42 +27,42 @@
       <td>
         <div class="text">
           <p id="h2">Nous Calender</p>
-
           <h1><b>Holidays</b></h1>
           <h3>{{ holiday.name }}</h3>
           <h4>{{ currentDateTime }}</h4>
         </div>
-
-        <cdk-accordion class="example-accordion">
-          <cdk-accordion-item
-            #accordionItem="cdkAccordionItem"
-            class="example-accordion-item"
-            role="button"
-            tabindex="0"
-            [attr.id]="'accordion-header-0'"
-            [attr.aria-expanded]="accordionItem.expanded"
-            [attr.aria-controls]="'accordion-body-0'"
-          >
-            <div
-              class="example-accordion-item-header"
-              (click)="accordionItem.toggle()"
+        <div class="moreinfo">
+          <cdk-accordion class="example-accordion">
+            <cdk-accordion-item
+              #accordionItem="cdkAccordionItem"
+              class="example-accordion-item"
+              role="button"
+              tabindex="0"
+              [attr.id]="'accordion-header-0'"
+              [attr.aria-expanded]="accordionItem.expanded"
+              [attr.aria-controls]="'accordion-body-0'"
             >
-              {{ "More Information" }}
-              <span class="example-accordion-item-description">
-                <!-- Click to {{ accordionItem.expanded ? "close" : "open" }} -->
-              </span>
-            </div>
-            <div
-              class="example-accordion-item-body"
-              role="region"
-              [style.display]="accordionItem.expanded ? '' : 'none'"
-              [attr.id]="'accordion-body-0'"
-              [attr.aria-labelledby]="'accordion-header-0'"
-            >
-              {{ holiday.desc }}
-            </div>
-          </cdk-accordion-item>
-        </cdk-accordion>
+              <div
+                class="example-accordion-item-header"
+                (click)="accordionItem.toggle()"
+              >
+                {{ "More Information" }}
+                <span class="example-accordion-item-description">
+                  <!-- Click to {{ accordionItem.expanded ? "close" : "open" }} -->
+                </span>
+              </div>
+              <div
+                class="example-accordion-item-body"
+                role="region"
+                [style.display]="accordionItem.expanded ? '' : 'none'"
+                [attr.id]="'accordion-body-0'"
+                [attr.aria-labelledby]="'accordion-header-0'"
+              >
+                {{ holiday.desc }}
+              </div>
+            </cdk-accordion-item>
+          </cdk-accordion>
+        </div>
       </td>
 
       <td id="row1">
@@ -68,15 +85,10 @@
         </mat-card>
       </td>
     </tr>
+    <tr>
+      <div class="Ycal">
+        <app-year-calendar></app-year-calendar>
+      </div>
+    </tr>
   </table>
-  <!-- <div class="ycal">
-    <ejs-calendar
-      id="calendar"
-      [values]="value"
-      [isMultiSelection]="multiselect"
-    ></ejs-calendar> -->
-  <!-- </div> -->
-  <div class="Ycal">
-    <app-year-calendar></app-year-calendar>
-  </div>
 </div>
