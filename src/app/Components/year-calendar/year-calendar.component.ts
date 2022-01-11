@@ -3,6 +3,7 @@ import { MatCalendarCellClassFunction } from '@angular/material/datepicker';
 import { CalenderHomeComponent } from '../calender-home/calender-home.component';
 import { CalendarService } from 'src/app/Services/CalendarService';
 import { NgForm } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-year-calendar',
@@ -12,7 +13,7 @@ import { NgForm } from '@angular/forms';
 })
 export class YearCalendarComponent implements OnInit {
   holiday!: any;
-  service = new CalendarService();
+  service = new CalendarService(this.http);
   Events!: NgForm;
   dateClass: MatCalendarCellClassFunction<Date> = (cellDate, view) => {
     // Only highligh dates inside the month view.
@@ -25,7 +26,7 @@ export class YearCalendarComponent implements OnInit {
 
     return '';
   };
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   ngOnInit(): void {}
 

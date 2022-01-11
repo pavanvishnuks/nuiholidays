@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { urlConfig } from './config/ExternalUrlConfig';
 
 export const mock = {
   name: 'Newyear',
@@ -26,15 +27,50 @@ export const mock = {
       edate: '14/01/22',
     },
   ],
+  Htype: [
+    {
+      id: 1,
+      name: 'General',
+    },
+    {
+      id: '2',
+      name: 'Restricted',
+    },
+    {
+      id: '3',
+      name: 'Optional',
+    },
+  ],
+  reg: [
+    {
+      id: '1',
+      regionname: 'Bangalore-India',
+    },
+    {
+      id: '2',
+      regionname: 'Coimbatore-India',
+    },
+    {
+      id: '3',
+      regionname: 'USA',
+    },
+    {
+      id: '4  ',
+      regionname: 'UK',
+    },
+  ],
 };
+
 @Injectable({
   providedIn: 'root',
 })
 export class CalendarService {
-  constructor() {
-    // this.http=http;
+  constructor(private http: HttpClient) {
+    this.http = http;
   }
   fetchAllHolidays = () => {
+    const holidays = this.http.get(urlConfig.allHolidays());
+    console.log('Holidays list', holidays);
     return mock;
   };
 }

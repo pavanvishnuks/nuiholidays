@@ -1,0 +1,94 @@
+<div class="header">
+  <a href="#default" class="logo">Nous calender Events</a>
+  <div class="header-right">
+    <a href="#contact">Profile</a>
+    <a href="#about">Logout</a>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-3"><app-year-calendar></app-year-calendar></div>
+    <div class="col-2">
+      <button mat-button [matMenuTriggerFor]="menu" id="menubtn">
+        Holiday Type
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item *ngFor="let Htype of holiday.Htype">
+          {{ Htype.name }}
+        </button>
+      </mat-menu>
+    </div>
+    <div class="col-7" id="radio">
+      <mat-radio-group aria-label="Select an option">
+        <mat-radio-button value="1" *ngFor="let r of holiday.reg">
+          {{ r.regionname }}</mat-radio-button
+        >
+      </mat-radio-group>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <p id="h2">Nous Calender</p>
+      <h1><b>Holidays</b></h1>
+      <h3>{{ holiday.name }}</h3>
+      <h4>{{ currentDateTime }}</h4>
+
+      <div class="moreinfo">
+        <cdk-accordion class="example-accordion">
+          <cdk-accordion-item
+            #accordionItem="cdkAccordionItem"
+            class="example-accordion-item"
+            role="button"
+            tabindex="0"
+            [attr.id]="'accordion-header-0'"
+            [attr.aria-expanded]="accordionItem.expanded"
+            [attr.aria-controls]="'accordion-body-0'"
+          >
+            <div
+              class="example-accordion-item-header"
+              (click)="accordionItem.toggle()"
+            >
+              {{ "More Information" }}
+              <span class="example-accordion-item-description">
+                <!-- Click to {{ accordionItem.expanded ? "close" : "open" }} -->
+              </span>
+            </div>
+            <div
+              class="example-accordion-item-body"
+              role="region"
+              [style.display]="accordionItem.expanded ? '' : 'none'"
+              [attr.id]="'accordion-body-0'"
+              [attr.aria-labelledby]="'accordion-header-0'"
+            >
+              {{ holiday.desc }}
+            </div>
+          </cdk-accordion-item>
+        </cdk-accordion>
+      </div>
+    </div>
+
+    <div class="col-8">
+      <img src="{{ holiday.img }}" id="festimg" class="img-fluid" />
+      <mat-card *ngFor="let upcomingEvents of holiday.Uevents">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <p>{{ upcomingEvents.edate }}</p>
+            </div>
+            <div class="col">
+              <p id="ename">{{ upcomingEvents.ename }}</p>
+            </div>
+            <div class="col">
+              <img
+                src="{{ upcomingEvents.eimg }}"
+                id="empimg"
+                class="img-fluid"
+              />
+            </div>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>

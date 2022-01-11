@@ -1,26 +1,34 @@
-<link
-  href="https://cdn.syncfusion.com/ej2/ej2-base/styles/material.css"
-  rel="stylesheet"
-/>
-<link
-  href="https://cdn.syncfusion.com/ej2/ej2-buttons/styles/material.css"
-  rel="stylesheet"
-/>
-<link
-  href="https://cdn.syncfusion.com/ej2/ej2-popups/styles/material.css"
-  rel="stylesheet"
-/>
-<link
-  href="https://cdn.syncfusion.com/ej2/ej2-calendars/styles/material.css"
-  rel="stylesheet"
-/>
-
 <div class="header">
   <a href="#default" class="logo">Nous calender Events</a>
   <div class="header-right">
     <a href="#contact">Profile</a>
     <a href="#about">Logout</a>
   </div>
+  <table class="tab1">
+    <tr>
+      <td>
+        <app-year-calendar></app-year-calendar>
+      </td>
+      <td>
+        <button mat-button [matMenuTriggerFor]="menu" id="menubtn">
+          Holiday
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>General Holidays</button>
+          <button mat-menu-item>Restricted Holidays</button>
+          <button mat-menu-item>Optional Holidays</button>
+        </mat-menu>
+      </td>
+      <td>
+        <mat-radio-group aria-label="Select an option">
+          <mat-radio-button value="1">Bangalore-India</mat-radio-button>
+          <mat-radio-button value="2">COIMBATORE-India</mat-radio-button>
+          <mat-radio-button value="3">USA</mat-radio-button>
+          <mat-radio-button value="4"> UK</mat-radio-button>
+        </mat-radio-group>
+      </td>
+    </tr>
+  </table>
 
   <table>
     <tr>
@@ -85,10 +93,10 @@
         </mat-card>
       </td>
     </tr>
-    <tr>
+    <!-- <tr>
       <div class="Ycal">
         <app-year-calendar></app-year-calendar>
       </div>
-    </tr>
+    </tr> -->
   </table>
 </div>
