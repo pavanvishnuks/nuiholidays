@@ -54,43 +54,40 @@
 }
 
 mat-card {
-  max-width: 800px;
+  max-width: 400px;
   min-width: 360px;
   height: 100px;
-  background-color: rgb(212, 212, 212);
-
+  background-color: #f8f8f8;
   border-radius: 10px;
   margin-top: 20px;
 }
 mat-card p {
   font-size: 2vw;
   /* margin-right: 80px; */
-  color: darkred;
+  color: #707070;
   margin-top: 20px;
 }
-#ename {
-  /* font-size: 25px; */
-  margin-left: 50px;
-}
+
 #empimg {
-  height: 100px;
+  height: 80px;
   position: absolute;
-  right: 0em;
-  bottom: 0em;
-  width: 130px;
-  border-radius: 8px;
+  right: 1em;
+  bottom: 0.7em;
+  width: 80px;
+  border-radius: 100%;
+}
+#ename {
+  margin-top: 0px;
 }
 
 .example-accordion {
   display: block;
   max-width: 300px;
-
   color: rgb(18, 123, 184);
 }
 
 .example-accordion-item {
   display: block;
-  border: solid 1px #ccc;
 }
 
 .example-accordion-item + .example-accordion-item {
@@ -103,13 +100,10 @@ mat-card p {
   justify-content: space-between;
 }
 
-.example-accordion-item-description {
-  font-size: 0.85em;
-  color: #999;
-}
-
 .example-accordion-item-body {
-  color: black;
+  color: #707070;
+  text-align: justify;
+  font-size: 1.2em;
 }
 .example-accordion-item-header,
 .example-accordion-item-body {
@@ -118,7 +112,7 @@ mat-card p {
 
 .example-accordion-item-header:hover {
   cursor: pointer;
-  background-color: lightblue;
+  /* background-color: lightblue; */
 }
 
 .example-accordion-item:first-child {
@@ -168,28 +162,68 @@ mat-card p {
 }
 
 #h2 {
-  font-size: 40px;
-  color: #999;
+  font-size: 3.125em;
+  color: #707070;
 }
 h1 {
-  font-size: 50px;
-  color: darkred;
+  font-size: 6.5em;
+  color: red;
 }
 h3 {
-  color: #999;
+  color: #707070;
+  font-size: 3.625em;
+  margin-top: 8px;
 }
 h4 {
-  color: #999;
+  color: #00a6ef;
+}
+h5 {
+  color: #707070;
+  font-size: 2.4em;
+}
+h6 {
+  font-size: 1.4em;
 }
 
 #menubtn {
-  width: 140px;
-  height: 55px;
-  background-color: rgb(199, 199, 199);
+  /* width: 140px;
+  height: 55px; */
+  background-color: #00a6ef;
+  color: white;
+  border-radius: 30px;
+  padding: 5px 30px 5px 30px;
 }
 mat-radio-button {
   margin-left: 30px;
 }
 #radio {
   margin-top: 20px;
+}
+.moreinfo {
+  background-color: #f8f8f8;
+  width: 300px;
+  border-radius: 20px;
+  border: none;
+  box-shadow: 2px 2px 10px 1px #707070;
+}
+#profile {
+  background-color: #00a6ef;
+  color: white;
+  border-radius: 25px;
+  padding: 5px 20px 5px 20px;
+}
+#logout {
+  background-color: red;
+  color: white;
+  border-radius: 25px;
+  padding: 5px 20px 5px 20px;
+}
+a {
+  margin: 3px;
+}
+#upevents {
+  padding: 5px;
+}
+#birthday {
+  margin-left: 200px;
 }

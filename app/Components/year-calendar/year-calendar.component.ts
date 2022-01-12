@@ -1,9 +1,10 @@
 import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 import { MatCalendarCellClassFunction } from '@angular/material/datepicker';
-import { CalenderHomeComponent } from '../calender-home/calender-home.component';
+// import { CalenderHomeComponent } from '../calender-home/calender-home.component';
 import { CalendarService } from 'src/app/Services/CalendarService';
 import { NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { HomepageComponent } from '../homepage/homepage.component';
 
 @Component({
   selector: 'app-year-calendar',
@@ -31,7 +32,12 @@ export class YearCalendarComponent implements OnInit {
   ngOnInit(): void {}
 
   events(Events: NgForm) {
-    this.holiday = this.service.fetchAllHolidays();
-    console.log(this.holiday);
+    // this.holiday = this.service.fetchAllHolidays();
+    // console.log(this.holiday);
+    this.service.ShowAllHoliday().subscribe((data) => {
+      this.holiday = data;
+
+      console.log(this.holiday);
+    });
   }
 }
